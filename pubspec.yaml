@@ -11,9 +11,9 @@ environment:
   flutter: '>=3.3.0'
 
 dependencies:
-  permission_handler: ^12.0.0+1
+  permission_handler: ^12.0.1
   path_provider: ^2.1.5
-  device_info_plus: ^11.3.0
+  device_info_plus: ^12.1.0
   flutter:
     sdk: flutter
 
