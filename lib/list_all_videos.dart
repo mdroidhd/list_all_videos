@@ -43,13 +43,11 @@ class ListAllVideos {
   // Asynchronous method to get all video files on the device
   Future<List<VideoDetails>> getAllVideosPath() async {
     // Object to get information about the Android device
-    var androidInfo = DeviceInfoPlugin();
 
     try {
       // Get Android device information and extract the version
-      await androidInfo.androidInfo.then((value) {
-        androidVersion = int.parse(value.version.release);
-      });
+      final info = await DeviceInfoPlugin().androidInfo;
+      androidVersion = info.version.sdkInt;
     } catch (e) {
       // Set Android version to 0 if information retrieval fails
       androidVersion = 0;
